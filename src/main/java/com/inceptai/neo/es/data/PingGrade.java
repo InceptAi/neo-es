@@ -31,10 +31,10 @@ public class PingGrade {
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
-    builder.append("PingGrade: ExternalServer: " +
-        WifiAnnotations.metricTypeToString(externalServerLatencyMetric) + " DnsServer: " +
-        WifiAnnotations.metricTypeToString(dnsServerLatencyMetric) + " Router: " +
-        WifiAnnotations.metricTypeToString(routerLatencyMetric) + " Alternative Dns: " +
+    builder.append("\n\nPingGrade: ExternalServer: " +
+        WifiAnnotations.metricTypeToString(externalServerLatencyMetric) + "\n DnsServer: " +
+        WifiAnnotations.metricTypeToString(dnsServerLatencyMetric) + "\n Router: " +
+        WifiAnnotations.metricTypeToString(routerLatencyMetric) + "\n Alternative Dns: " +
         WifiAnnotations.metricTypeToString(alternativeDnsMetric));
     return builder.toString();
   }

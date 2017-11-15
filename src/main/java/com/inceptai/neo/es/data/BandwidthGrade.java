@@ -27,7 +27,7 @@ public class BandwidthGrade {
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
-    builder.append("Bandwidth Grade: Upload: " + WifiAnnotations.metricTypeToString(uploadBandwidthMetric));
+    builder.append("\n\nBandwidth Grade: Upload: " + WifiAnnotations.metricTypeToString(uploadBandwidthMetric));
     builder.append("\n Download: " + WifiAnnotations.metricTypeToString(downloadBandwidthMetric));
     builder.append("\n Download BW: " + downloadMbps);
     builder.append("\n Upload BW: " + uploadMbps);

@@ -16,7 +16,7 @@ public class HttpGrade {
 
   @Override
   public String toString() {
-    return "HttpGrade: " + WifiAnnotations.metricTypeToString(httpDownloadLatencyMetric);
+    return "\n\nHttpGrade: " + WifiAnnotations.metricTypeToString(httpDownloadLatencyMetric);
   }
 
 }

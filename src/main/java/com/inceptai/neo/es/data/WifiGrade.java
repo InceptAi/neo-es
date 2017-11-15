@@ -42,7 +42,7 @@ public class WifiGrade {
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
-    builder.append("WifiGrade: Primary AP signalMetric" +
+    builder.append("\n\nWifiGrade: Primary AP signalMetric: " +
         WifiAnnotations.metricTypeToString(primaryApSignalMetric) +
         ", SpeedMetric: " + WifiAnnotations.metricTypeToString(primaryApLinkSpeedMetric) +
         ", channelOccupancy: " +
