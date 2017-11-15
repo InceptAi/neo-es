@@ -99,4 +99,24 @@ public class InferenceRecord {
   public double getAccuracy() {
     return accuracy;
   }
+
+  @Override
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+    builder.append("\nuid = " + uid);
+    builder.append("\n phoneInfo = " + phoneInfo);
+    builder.append("\n titleMessage = " + titleMessage);
+    builder.append("\n appVersion = " + appVersion);
+    builder.append("\n detailedMessageList = " + detailedMessageList);
+    builder.append("\n timestamp = " + timestamp);
+    builder.append("\n bandwidthGradeJson = " + bandwidthGradeJson);
+    builder.append("\n wifiGradeJson = " + wifiGradeJson);
+    builder.append("\n pingGradeJson = " + pingGradeJson);
+    builder.append("\n httpGradeJson = " + httpGradeJson);
+    builder.append("\n conditionUsedForInference = " + conditionsUsedForInference);
+    builder.append("\n lat = " + lat);
+    builder.append("\n lng = " + lon);
+    builder.append("\n accuracy = " + accuracy);
+    return builder.toString();
+  }
 }
