@@ -1,0 +1,12 @@
+{
+  "bandwidthGradeJson" : "{\"externalIP\":\"108.177.6.59\",\"isp\":\"Google\",\"downloadMbps\":22.2802708392,\"downloadUpdatedAtMs\":1494012460981,\"uploadMbps\":3.7038420016,\"uploadUpdatedAtMs\":1494012460981,\"downloadBandwidthMetric\":0,\"uploadBandwidthMetric\":2}",
+  "conditionsUsedForInference" : "{\"37\":0.8}",
+  "detailedMessageList" : [ "we are unable to reach your DNS server, which means you can't access the Internet on your phone and other devices. This could be because the DNS server you have configured is down. " ],
+  "httpGradeJson" : "{\"updatedAtMs\":1494012464215,\"httpDownloadLatencyMetric\":6}",
+  "phoneInfo" : "{\"manufacturer\":\"asus\",\"model\":\"Nexus 7\"}",
+  "pingGradeJson" : "{\"primaryDns\":\"8.8.8.8\",\"alternativeDnsLatencyMs\":0.0,\"dnsServerLatencyMs\":10000.0,\"externalServerLatencyMs\":0.0,\"routerLatencyMs\":2.349,\"updatedAtMs\":1494012464176,\"alternativeDnsMetric\":6,\"dnsServerLatencyMetric\":5,\"externalServerLatencyMetric\":6,\"routerLatencyMetric\":0}",
+  "timestamp" : 1494012464242,
+  "titleMessage" : "Your wifi connection to your router is fine. However, we are unable to reach your DNS server, which means you can't access the Internet on your phone and other devices.",
+  "uid" : "1da31724-ba26-4644-8e1e-bca31fd7d991",
+  "wifiGradeJson" : "{\"primaryApSsid\":\"\\\"wl-ftl-mt26-1-5\\\"\",\"wifiChannelOccupancyMetric\":{\"5745\":0,\"5805\":0,\"2412\":0,\"2437\":0,\"5785\":0,\"5765\":0,\"5240\":1,\"5825\":0,\"2462\":0,\"5220\":1,\"5180\":1,\"5200\":0},\"updatedAtMs\":1494012460990,\"leastOccupiedChannel\":5805,\"leastOccupiedChannelAps\":0,\"primaryApChannel\":5220,\"primaryApChannelInterferingAps\":1,\"primaryApLinkSpeedMetric\":1,\"primaryApSignal\":-33,\"primaryApSignalMetric\":0,\"primaryLinkChannelOccupancyMetric\":2,\"wifiConnectivityMode\":0,\"wifiLinkMode\":0}"
+}

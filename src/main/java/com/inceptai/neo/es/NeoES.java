@@ -19,6 +19,8 @@ public class NeoES {
   private OWLOntologyManager owlOntologyManager;
   private OWLOntology ontology;
 
+  private static Logger NL = Logger.get(NeoES.class);
+
   private NeoES(OWLOntologyManager owlOntologyManager, OWLOntology initOntology) {
     this.owlOntologyManager = owlOntologyManager;
     this.ontology = initOntology;
@@ -38,12 +40,14 @@ public class NeoES {
       readFile = FileUtils.readFileToString(new File(owlFile), (String) null);
     } catch (IOException e) {
       // Error logger.
+      NL.e("Exception opening ontology file: " + e.toString());
       return null;
     }
     try {
       owlOntology = manager.loadOntologyFromOntologyDocument(new StringDocumentSource(readFile));
 
     } catch (OWLOntologyCreationException e) {
+      NL.e("Exception loading ontology from string document: " + e.toString());
       return null;
     }
     return new NeoES(manager, owlOntology);

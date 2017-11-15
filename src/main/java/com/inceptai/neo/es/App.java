@@ -1,10 +1,17 @@
 package com.inceptai.neo.es;
 
+import com.inceptai.neo.es.data.JsonParser;
+import java.io.File;
+import java.io.IOException;
+import org.apache.commons.io.FileUtils;
+
 /**
- * Hello world!
+ * CommandLine interface to the NeoES.
  */
 public class App {
   private static final String ONTOLOGY_SRC = "owl/android-user-101.owl";
+  private static final String INFERENCE_RECORD_JSON = "json-data/dobbybackend--KjP4FnLvj-SdF0zGXnN-export.json";
+  private static final Logger NL = Logger.get(App.class);
 
   public static void main(String[] args) {
     NeoES neoES = NeoES.buildNeoExpertSystem(ONTOLOGY_SRC);
@@ -15,5 +22,11 @@ public class App {
       System.out.println("NeoES creation failed.");
     }
     neoES.walkOntology();
+    try {
+      JsonParser.parseInferenceResult(
+          FileUtils.readFileToString(new File(INFERENCE_RECORD_JSON), (String) null));
+    } catch (IOException e) {
+      NL.e("Exception parsing json file: " + e);
+    }
   }
 }
