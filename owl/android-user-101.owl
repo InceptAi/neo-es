@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://inceptai.com/neo/ontologies/android-user-101#"
+     xml:base="http://inceptai.com/neo/ontologies/android-user-101"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://inceptai.com/neo/ontologies/android-user-101"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#NetworkInterface -->
+
+    <owl:ObjectProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#NetworkInterface">
+        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#InternetConnection"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#Network"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#DataRate -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#DataRate">
+        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetwork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#SSID -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#SSID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetwork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#SignalStrength -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#SignalStrength">
+        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetwork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#InternetConnection -->
+
+    <owl:Class rdf:about="http://inceptai.com/neo/ontologies/android-user-101#InternetConnection"/>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#Network -->
+
+    <owl:Class rdf:about="http://inceptai.com/neo/ontologies/android-user-101#Network"/>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#NetworkNode -->
+
+    <owl:Class rdf:about="http://inceptai.com/neo/ontologies/android-user-101#NetworkNode"/>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#Phone -->
+
+    <owl:Class rdf:about="http://inceptai.com/neo/ontologies/android-user-101#Phone"/>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#User -->
+
+    <owl:Class rdf:about="http://inceptai.com/neo/ontologies/android-user-101#User"/>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#WifiNetwork -->
+
+    <owl:Class rdf:about="http://inceptai.com/neo/ontologies/android-user-101#WifiNetwork">
+        <rdfs:subClassOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#Network"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://inceptai.com/neo/ontologies/android-user-101#InternetConnection"/>
+            <rdf:Description rdf:about="http://inceptai.com/neo/ontologies/android-user-101#Network"/>
+            <rdf:Description rdf:about="http://inceptai.com/neo/ontologies/android-user-101#NetworkNode"/>
+            <rdf:Description rdf:about="http://inceptai.com/neo/ontologies/android-user-101#Phone"/>
+            <rdf:Description rdf:about="http://inceptai.com/neo/ontologies/android-user-101#User"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

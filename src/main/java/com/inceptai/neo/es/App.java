@@ -1,40 +1,19 @@
 package com.inceptai.neo.es;
 
-import java.io.File;
-import java.io.IOException;
-import javax.annotation.Nonnull;
-import org.apache.commons.io.FileUtils;
-import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.io.StringDocumentSource;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
-
 /**
  * Hello world!
  */
 public class App {
+  private static final String ONTOLOGY_SRC = "owl/android-user-101.owl";
 
   public static void main(String[] args) {
-    try {
-      OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-      OWLOntology ontology = load(manager, "");
-    } catch (OWLOntologyCreationException e) {
-      System.out.println(e.toString());
-    }
-    System.out.println("Hello World!");
-  }
+    NeoES neoES = NeoES.buildNeoExpertSystem(ONTOLOGY_SRC);
 
-  @Nonnull
-  private static OWLOntology load(@Nonnull OWLOntologyManager manager, String sourceFile)
-      throws OWLOntologyCreationException {
-    String readFile="";
-    try {
-      readFile = FileUtils.readFileToString(new File(sourceFile), (String) null);
-    } catch (IOException e) {
-
+    if (neoES != null) {
+      System.out.println("Successfully created a NeoES instance !");
+    } else {
+      System.out.println("NeoES creation failed.");
     }
-    // in this test, the ontology is loaded from a string
-    return manager.loadOntologyFromOntologyDocument(new StringDocumentSource(readFile));
+    neoES.walkOntology();
   }
 }
