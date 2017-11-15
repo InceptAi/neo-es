@@ -13,6 +13,18 @@ public class JsonParser {
   public static void parseInferenceResult(String jsonString) {
     InferenceRecord record = getGson().fromJson(jsonString, InferenceRecord.class);
     NL.i("InferenceRecord: " + record);
+
+    BandwidthGrade bandwidthGrade = getGson().fromJson(record.getBandwidthGradeJson(), BandwidthGrade.class);
+    NL.i("BandwidthGrade: " + bandwidthGrade);
+
+    PingGrade pingGrade = getGson().fromJson(record.getPingGradeJson(), PingGrade.class);
+    NL.i("PingGrade: " + pingGrade);
+
+    HttpGrade httpGrade = getGson().fromJson(record.getHttpGradeJson(), HttpGrade.class);
+    NL.i("HttpGrade: " + httpGrade);
+
+    WifiGrade wifiGrade = getGson().fromJson(record.getWifiGradeJson(), WifiGrade.class);
+    NL.i("WifiGrade: " + wifiGrade);
   }
 
   /**
