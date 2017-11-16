@@ -2,6 +2,8 @@ package com.inceptai.neo.es;
 
 import static java.util.Collections.singleton;
 
+import com.inceptai.neo.es.data.InferenceBundle;
+import com.inceptai.neo.es.data.WifiGrade;
 import java.io.File;
 import java.io.IOException;
 import org.apache.commons.io.FileUtils;
@@ -62,6 +64,10 @@ public class NeoES {
 
   }
 
+  public void addInference(InferenceBundle bundle) {
+
+  }
+
   public void walkOntology() {
     System.out.println(ontology.toString());
     OWLOntologyWalker walker = new OWLOntologyWalker(singleton(ontology));
@@ -80,5 +86,9 @@ public class NeoES {
     // Now ask the walker to walk over the ontology structure using our
     // visitor instance.
     walker.walkStructure(visitor);
+  }
+
+  private void addWifiGrade(WifiGrade wifiGrade) {
+    
   }
 }

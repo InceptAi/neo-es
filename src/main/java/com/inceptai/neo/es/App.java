@@ -1,5 +1,6 @@
 package com.inceptai.neo.es;
 
+import com.inceptai.neo.es.data.InferenceBundle;
 import com.inceptai.neo.es.data.JsonParser;
 import java.io.File;
 import java.io.IOException;
@@ -23,8 +24,9 @@ public class App {
     }
     neoES.walkOntology();
     try {
-      JsonParser.parseInferenceResult(
+      InferenceBundle bundle = JsonParser.parseInferenceResult(
           FileUtils.readFileToString(new File(INFERENCE_RECORD_JSON), (String) null));
+      neoES.addInference(bundle);
     } catch (IOException e) {
       NL.e("Exception parsing json file: " + e);
     }

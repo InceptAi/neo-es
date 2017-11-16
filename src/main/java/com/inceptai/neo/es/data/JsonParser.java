@@ -10,7 +10,7 @@ public class JsonParser {
 
   private JsonParser() {}
 
-  public static void parseInferenceResult(String jsonString) {
+  public static InferenceBundle parseInferenceResult(String jsonString) {
     InferenceRecord record = getGson().fromJson(jsonString, InferenceRecord.class);
     NL.i("InferenceRecord: " + record);
 
@@ -25,6 +25,8 @@ public class JsonParser {
 
     WifiGrade wifiGrade = getGson().fromJson(record.getWifiGradeJson(), WifiGrade.class);
     NL.i("WifiGrade: " + wifiGrade);
+
+    return new InferenceBundle(record, wifiGrade, httpGrade, bandwidthGrade, pingGrade);
   }
 
   /**
