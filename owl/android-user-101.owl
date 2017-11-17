@@ -13,6 +13,205 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#neo:ErrorCodesEnum -->
+
+    <rdfs:Datatype rdf:about="http://inceptai.com/neo/ontologies/android-user-101#neo:ErrorCodesEnum">
+        <owl:equivalentClass rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum -->
+
+    <rdfs:Datatype rdf:about="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>ABYSMAL</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>AVERAGE</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>EXCELLENT</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>GOOD</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>NONFUNCTIONAL</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>POOR</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>UNKNOWN</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#neo:WifiConnecitivityModesEnum -->
+
+    <rdfs:Datatype rdf:about="http://inceptai.com/neo/ontologies/android-user-101#neo:WifiConnecitivityModesEnum">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>CONNECTED_AND_CAPTIVE_PORTAL</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>CONNECTED_AND_OFFLINE</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>CONNECTED_AND_ONLINE</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>CONNECTED_AND_UNKNOWN</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>MAX_MODES</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>OFF</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>ON_AND_DISCONNECTED</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>UNKNOWN</rdf:first>
+                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#neo:WifiLinkStateEnum -->
+
+    <rdfs:Datatype rdf:about="http://inceptai.com/neo/ontologies/android-user-101#neo:WifiLinkStateEnum">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>CONNECTING</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>DISCONNECTED</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>FREQUENT_DISCONNECTIONS</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>HANGING_ON_AUTHENTICATING</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>HANGING_ON_DHCP</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>HANGING_ON_SCANNING</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>MAX_MODES</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>NO_PROBLEM_DEFAULT_STATE</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first>UNKNOWN</rdf:first>
+                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -41,30 +240,300 @@
     
 
 
-    <!-- http://inceptai.com/neo/ontologies/android-user-101#DataRate -->
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#AlternativeDnsLatencyMs -->
 
-    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#DataRate">
-        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetwork"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#AlternativeDnsLatencyMs">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#PingProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://inceptai.com/neo/ontologies/android-user-101#SSID -->
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#AlternativeDnsMetric -->
 
-    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#SSID">
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#AlternativeDnsMetric">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#PingProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#BandwidthErrorCode -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#BandwidthErrorCode">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#BandwidthProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetwork"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:ErrorCodesEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#BandwidthProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#BandwidthProperty">
+        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#InternetConnection"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#BestServerLatencyMs -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#BestServerLatencyMs">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#BandwidthProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#DnsLatencyMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#DnsLatencyMetric">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#PingProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#DnsLatencyMs -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#DnsLatencyMs">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#PingProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#DownloadBandwidthMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#DownloadBandwidthMetric">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#BandwidthProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#DownloadLatencyMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#DownloadLatencyMetric">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#HttpProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#DownloadMbps -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#DownloadMbps">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#BandwidthProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#ExternalServerLatencyMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#ExternalServerLatencyMetric">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#PingProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#ExternalServerLatencyMs -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#ExternalServerLatencyMs">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#PingProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#HttpDownloadLatencyMs -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#HttpDownloadLatencyMs">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#HttpProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#HttpErrorCode -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#HttpErrorCode">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#HttpProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:ErrorCodesEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#HttpProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#HttpProperty">
+        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#InternetConnection"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#PingProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#PingProperty">
+        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#InternetConnection"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPBSSID -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPBSSID">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://inceptai.com/neo/ontologies/android-user-101#SignalStrength -->
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPChannel -->
 
-    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#SignalStrength">
-        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetwork"/>
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPChannel">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPLinkSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPLinkSpeed">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPLinkSpeedMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPLinkSpeedMetric">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPSSID -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPSSID">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPSignalMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#PrimaryAPSignalMetric">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#PrimaryLinkChannelOccupancyMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#PrimaryLinkChannelOccupancyMetric">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#RouterLatencyMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#RouterLatencyMetric">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#PingProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#RouterLatencyMs -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#RouterLatencyMs">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#PingProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#UploadBandwidthMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#UploadBandwidthMetric">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#BandwidthProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:MetricQualityEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#UploadMbps -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#UploadMbps">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#BandwidthProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#WifiConnectivityMode -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#WifiConnectivityMode">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:WifiConnecitivityModesEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#WifiDataRate -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#WifiDataRate">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#WifiErrorCode -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#WifiErrorCode">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:ErrorCodesEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#WifiLinkMode -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#WifiLinkMode">
+        <rdfs:subPropertyOf rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#neo:WifiLinkStateEnum"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://inceptai.com/neo/ontologies/android-user-101#WifiNetworkProperty">
+        <rdfs:domain rdf:resource="http://inceptai.com/neo/ontologies/android-user-101#WifiNetwork"/>
     </owl:DatatypeProperty>
     
 

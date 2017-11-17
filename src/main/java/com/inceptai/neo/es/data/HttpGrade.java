@@ -1,5 +1,6 @@
 package com.inceptai.neo.es.data;
 
+import com.inceptai.neo.es.OntologyConstants.Wifi;
 import com.inceptai.neo.es.Utils;
 import com.inceptai.neo.es.data.WifiAnnotations.ErrorCodes;
 import com.inceptai.neo.es.data.WifiAnnotations.MetricType;
@@ -19,4 +20,15 @@ public class HttpGrade {
     return "\n\nHttpGrade: " + WifiAnnotations.metricTypeToString(httpDownloadLatencyMetric);
   }
 
+  public String getHttpDownloadLatencyMetric() {
+    return WifiAnnotations.metricTypeToString(httpDownloadLatencyMetric);
+  }
+
+  public String getErrorCode() {
+    return WifiAnnotations.errorCodesToStrings(errorCode);
+  }
+
+  public double getHttpDownloadLatencyMs() {
+    return httpDownloadLatencyMs;
+  }
 }

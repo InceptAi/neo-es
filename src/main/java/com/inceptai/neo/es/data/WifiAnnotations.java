@@ -164,7 +164,7 @@ public class WifiAnnotations {
     }
   }
 
-  public static String bandwidthTestErrorCodesToStrings(@ErrorCodes int errorCode) {
+  public static String errorCodesToStrings(@ErrorCodes int errorCode) {
     switch (errorCode) {
       case ErrorCodes.NO_ERROR:
         return "NO_ERROR";

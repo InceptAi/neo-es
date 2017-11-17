@@ -38,4 +38,63 @@ public class PingGrade {
         WifiAnnotations.metricTypeToString(alternativeDnsMetric));
     return builder.toString();
   }
+
+  public String getExternalServerLatencyMetric() {
+    return WifiAnnotations.metricTypeToString(externalServerLatencyMetric);
+  }
+
+  public String getDnsServerLatencyMetric() {
+    return WifiAnnotations.metricTypeToString(dnsServerLatencyMetric);
+  }
+
+  public String getRouterLatencyMetric() {
+    return WifiAnnotations.metricTypeToString(routerLatencyMetric);
+  }
+
+  public String getAlternativeDnsMetric() {
+    return WifiAnnotations.metricTypeToString(alternativeDnsMetric);
+  }
+
+  /*
+  public String getPrimaryDns() {
+    return primaryDns;
+  }
+
+  public String getAlternativeDns() {
+    return alternativeDns;
+  }
+
+  public String getRouterIp() {
+    return routerIp;
+  }
+
+  public String getOwnIp() {
+    return ownIp;
+  }
+
+  public String getNetmask() {
+    return netmask;
+  }
+
+  public int getLeaseDuration() {
+    return leaseDuration;
+  }
+  */
+
+  public double getRouterLatencyMs() {
+    return routerLatencyMs;
+  }
+
+  public double getDnsServerLatencyMs() {
+    return dnsServerLatencyMs;
+  }
+
+  public double getExternalServerLatencyMs() {
+    return externalServerLatencyMs;
+  }
+
+  public double getAlternativeDnsLatencyMs() {
+    return alternativeDnsLatencyMs;
+  }
+
 }

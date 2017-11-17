@@ -45,4 +45,27 @@ public class BandwidthGrade {
     return builder.toString();
   }
 
+  public String getUploadBandwidthMetric() {
+    return WifiAnnotations.metricTypeToString(uploadBandwidthMetric);
+  }
+
+  public String getDownloadBandwidthMetric() {
+    return WifiAnnotations.metricTypeToString(downloadBandwidthMetric);
+  }
+
+  public double getUploadMbps() {
+    return uploadMbps;
+  }
+
+  public double getDownloadMbps() {
+    return downloadMbps;
+  }
+
+  public double getBestServerLatencyMs() {
+    return bestServerLatencyMs;
+  }
+
+  public String getErrorCode() {
+    return WifiAnnotations.errorCodesToStrings(errorCode);
+  }
 }

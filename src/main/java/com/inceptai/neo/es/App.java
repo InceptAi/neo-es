@@ -16,7 +16,7 @@ public class App {
 
   public static void main(String[] args) {
     NeoES neoES = NeoES.buildNeoExpertSystem(ONTOLOGY_SRC);
-
+    neoES.printOntology();
     if (neoES != null) {
       System.out.println("Successfully created a NeoES instance !");
     } else {

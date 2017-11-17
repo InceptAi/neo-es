@@ -58,4 +58,43 @@ public class WifiGrade {
     builder.append("\n linkSpeed:" + linkSpeed);
     return builder.toString();
   }
+
+  public String getPrimaryApSignalMetric() {
+    return WifiAnnotations.metricTypeToString(primaryApSignalMetric);
+  }
+
+  public int getPrimaryApLinkSpeedMetric() {
+    return primaryApLinkSpeedMetric;
+  }
+
+  public int getPrimaryLinkChannelOccupancyMetric() {
+    return primaryLinkChannelOccupancyMetric;
+  }
+
+  public String getWifiConnectivityMode() {
+    return WifiAnnotations.connectivityModeToString(wifiConnectivityMode);
+  }
+
+  public String getWifiLinkMode() {
+    return WifiAnnotations.wifiLinkModeToString(wifiLinkMode);
+  }
+
+  public String getPrimaryApBSSID() {
+    return primaryApBSSID;
+  }
+
+  public String getPrimaryApSsid() {
+    return primaryApSsid;
+  }
+
+  public int getPrimaryApChannel() {
+    return primaryApChannel;
+  }
+
+  public int getLinkSpeed() {
+    return linkSpeed;
+  }
+  public String getErrorCode() {
+    return WifiAnnotations.errorCodesToStrings(errorCode);
+  }
 }
