@@ -42,12 +42,14 @@ public class NeoES {
 
   private OWLOntologyManager owlOntologyManager;
   private OWLOntology ontology;
+  private ParamCopier paramCopier;
 
   private static Logger NL = Logger.get(NeoES.class);
 
   private NeoES(OWLOntologyManager owlOntologyManager, OWLOntology initOntology) {
     this.owlOntologyManager = owlOntologyManager;
     this.ontology = initOntology;
+    this.paramCopier = new ParamCopier(this.owlOntologyManager, this.ontology);
   }
 
   /**
@@ -136,96 +138,45 @@ public class NeoES {
   }
 
   private void addWifiGrade(WifiGrade wifiGrade) {
-    Optional<IRI> iri = ontology.getOntologyID().getOntologyIRI();
-    if (!iri.isPresent()) {
-      NL.e("No IRI found for stored ontology. Unable to add WifiGrade.");
-      return;
-    }
-    IRI ontologyIRI = iri.get();
-    OWLDataFactory factory = owlOntologyManager.getOWLDataFactory();
-    OWLIndividual wifiNetwork = factory.getOWLNamedIndividual(IRI.create(ontologyIRI +
-        OntologyConstants.wifiNetworkIndividual()));
+    String[] specialCaseNames = {
+      /* ONT                JSON    */
+      "primaryaplinkspeed", "linkspeed",
+      "wifidatarate",       "linkspeed",
+      "wifierrorcode",      "errorcode",
+    };
 
-    AxiomAdder axiomAdder = new AxiomAdder(factory, wifiNetwork, ontologyIRI);
-    axiomAdder.addProperty(OntologyConstants.Wifi.primaryApSignalMetricProperty(), wifiGrade.getPrimaryApSignalMetric());
-    axiomAdder.addProperty(OntologyConstants.Wifi.primaryApBssidProperty(), wifiGrade.getPrimaryApBSSID());
-    axiomAdder.addProperty(OntologyConstants.Wifi.primaryApChannelProperty(), wifiGrade.getPrimaryApChannel());
-    axiomAdder.addProperty(OntologyConstants.Wifi.primaryApSsidProperty(), wifiGrade.getPrimaryApSsid());
-    axiomAdder.addProperty(OntologyConstants.Wifi.wifiConnectivityModeProperty(), wifiGrade.getWifiConnectivityMode());
-    axiomAdder.addProperty(OntologyConstants.Wifi.wifiDataRateProperty(), wifiGrade.getLinkSpeed());
-    axiomAdder.addProperty(OntologyConstants.Wifi.wifiErrorCodeProperty(), wifiGrade.getErrorCode());
-    axiomAdder.addProperty(OntologyConstants.Wifi.wifiLinkModeProperty(), wifiGrade.getWifiLinkMode());
-    axiomAdder.addProperty(OntologyConstants.Wifi.primaryLinkChannelOccupancyMetricProperty(), wifiGrade.getPrimaryLinkChannelOccupancyMetric());
-    axiomAdder.addProperty(OntologyConstants.Wifi.primaryApLinkSpeedProperty(), wifiGrade.getLinkSpeed());
-    axiomAdder.addProperty(OntologyConstants.Wifi.primaryApLinkSpeedMetricProperty(), wifiGrade.getPrimaryApLinkSpeedMetric());
-
-    owlOntologyManager.addAxioms(ontology, axiomAdder.asSet().stream());
+    paramCopier.copyJsonToOntology(OntologyConstants.wifiNetworkIndividual(), wifiGrade,
+        OntologyConstants.Wifi.class, specialCaseNames);
   }
 
-
   private void addHttpGrade(HttpGrade httpGrade) {
-    Optional<IRI> iri = ontology.getOntologyID().getOntologyIRI();
-    if (!iri.isPresent()) {
-      NL.e("No IRI found for stored ontology. Unable to add WifiGrade.");
-      return;
-    }
-    IRI ontologyIRI = iri.get();
-    OWLDataFactory factory = owlOntologyManager.getOWLDataFactory();
-    OWLIndividual internetConnection = factory.getOWLNamedIndividual(IRI.create(ontologyIRI +
-        OntologyConstants.internetConnectionIndividual()));
-
-    AxiomAdder axiomAdder = new AxiomAdder(factory, internetConnection, ontologyIRI);
-    axiomAdder.addProperty(OntologyConstants.Http.downloadLatencyMetricProperty(), httpGrade.getHttpDownloadLatencyMetric());
-    axiomAdder.addProperty(OntologyConstants.Http.httpErrorCodeProperty(), httpGrade.getErrorCode());
-    axiomAdder.addProperty(OntologyConstants.Http.httpDownloadLatencyMsProperty(), httpGrade.getHttpDownloadLatencyMs());
-
-    owlOntologyManager.addAxioms(ontology, axiomAdder.asSet().stream());
+    String[] specialCaseNames = {
+      /* ONT                    JSON    */
+      "httperrorcode",          "errorcode",
+      "downloadlatencymetric",  "httpdownloadlatencymetric"
+    };
+    paramCopier.copyJsonToOntology(OntologyConstants.internetConnectionIndividual(), httpGrade,
+        OntologyConstants.Http.class, specialCaseNames);
   }
 
   private void addPingGrade(PingGrade pingGrade) {
-    Optional<IRI> iri = ontology.getOntologyID().getOntologyIRI();
-    if (!iri.isPresent()) {
-      NL.e("No IRI found for stored ontology. Unable to add WifiGrade.");
-      return;
-    }
-    IRI ontologyIRI = iri.get();
-    OWLDataFactory factory = owlOntologyManager.getOWLDataFactory();
-    OWLIndividual internetConnection = factory.getOWLNamedIndividual(IRI.create(ontologyIRI +
-        OntologyConstants.internetConnectionIndividual()));
-
-    AxiomAdder axiomAdder = new AxiomAdder(factory, internetConnection, ontologyIRI);
-    axiomAdder.addProperty(OntologyConstants.Ping.dnsLatencyMetricProperty(), pingGrade.getDnsServerLatencyMetric());
-    axiomAdder.addProperty(OntologyConstants.Ping.dnsLatencyMsProperty(), pingGrade.getDnsServerLatencyMs());
-    axiomAdder.addProperty(OntologyConstants.Ping.routerLatencyMetricProperty(), pingGrade.getRouterLatencyMetric());
-    axiomAdder.addProperty(OntologyConstants.Ping.routerLatencyMsProperty(), pingGrade.getRouterLatencyMs());
-    axiomAdder.addProperty(OntologyConstants.Ping.alternativeDnsLatencyMetricProperty(), pingGrade.getAlternativeDnsMetric());
-    axiomAdder.addProperty(OntologyConstants.Ping.alternativeDnsLatencyMsProperty(), pingGrade.getAlternativeDnsLatencyMs());
-    axiomAdder.addProperty(OntologyConstants.Ping.externalServerLatencyMetricProperty(), pingGrade.getExternalServerLatencyMetric());
-    axiomAdder.addProperty(OntologyConstants.Ping.externalServerLatencyMsProperty(), pingGrade.getExternalServerLatencyMs());
-
-    owlOntologyManager.addAxioms(ontology, axiomAdder.asSet().stream());
+    String[] specialCaseNames = {
+      /* ONT                          JSON    */
+      "dnslatencymetric",             "dnsserverlatencymetric",
+      "dnslatencyms",                 "dnsserverlatencyms",
+      "alternativednslatencymetric",  "alternativednsmetric"
+    };
+    paramCopier.copyJsonToOntology(OntologyConstants.internetConnectionIndividual(), pingGrade,
+        OntologyConstants.Ping.class, specialCaseNames);
   }
 
   private void addBandwidthGrade(BandwidthGrade bandwidthGrade) {
-    Optional<IRI> iri = ontology.getOntologyID().getOntologyIRI();
-    if (!iri.isPresent()) {
-      NL.e("No IRI found for stored ontology. Unable to add WifiGrade.");
-      return;
-    }
-    IRI ontologyIRI = iri.get();
-    OWLDataFactory factory = owlOntologyManager.getOWLDataFactory();
-    OWLIndividual internetConnection = factory.getOWLNamedIndividual(IRI.create(ontologyIRI +
-        OntologyConstants.internetConnectionIndividual()));
-
-    AxiomAdder axiomAdder = new AxiomAdder(factory, internetConnection, ontologyIRI);
-    axiomAdder.addProperty(OntologyConstants.Bandwidth.downloadMbpsProperty(), bandwidthGrade.getDownloadMbps());
-    axiomAdder.addProperty(OntologyConstants.Bandwidth.downloadBandwidthMetricProperty(), bandwidthGrade.getDownloadBandwidthMetric());
-    axiomAdder.addProperty(OntologyConstants.Bandwidth.uploadMbpsProperty(), bandwidthGrade.getUploadMbps());
-    axiomAdder.addProperty(OntologyConstants.Bandwidth.uploadBandwidthMetricProperty(), bandwidthGrade.getUploadBandwidthMetric());
-    axiomAdder.addProperty(OntologyConstants.Bandwidth.bandwidthErrorCodeProperty(), bandwidthGrade.getErrorCode());
-    axiomAdder.addProperty(OntologyConstants.Bandwidth.bestServerLatencyMsProperty(), bandwidthGrade.getBestServerLatencyMs());
-
-    owlOntologyManager.addAxioms(ontology, axiomAdder.asSet().stream());
+    String[] specialCaseNames = {
+      /* ONT                JSON    */
+      "bandwidtherrorcode", "errorcode",
+    };
+    paramCopier.copyJsonToOntology(OntologyConstants.internetConnectionIndividual(), bandwidthGrade,
+        OntologyConstants.Bandwidth.class, specialCaseNames);
   }
 
   public void printOntology() {
